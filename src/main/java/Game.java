@@ -41,10 +41,7 @@ public class Game {
 
 
 
-       // players.add("Petya");
-       // players.add("Any");
-       // players.add("Olya");
-       // players.add("Koly");
+
 
 
 
