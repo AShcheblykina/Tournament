@@ -52,6 +52,40 @@ public class GameTest {
 
         Assertions.assertEquals(expected,actual);
     }
+    @Test
+    public void notRegister() {
+        Game game = new Game();
+
+        Player player1 = new Player(1, "Koly", 100);
+        Player player2 = new Player(2, "Any", 60);
+
+        game.register(player1);
+        game.register(player2);
+
+        int actual = game.round("Koly", "Any");
+        int expected = 2;
+
+        Assertions.assertThrows(NotRegisteredException.class, () -> {
+            ArrayList.round(player1);
+        });
+    }
+    @Test
+    public void notRegisterTo() {
+        Game game = new Game();
+
+        Player player1 = new Player(1,"Koly",100);
+        Player player2 = new Player(2,"Any", 60);
+
+        //game.register(player1);
+        game.register(player2);
+
+        int actual = game.round("Koly","Any");
+        int expected = 2;
+
+        Assertions.assertEquals(expected,actual);
+
+
+    }
 
 
 
