@@ -56,7 +56,7 @@ public class GameTest {
     }
 
     @Test
-    public void notRegister() {
+    public void notRegisterOnePlayer() {
         Game game = new Game();
 
         Player player1 = new Player(1, "Koly", 100);
@@ -70,7 +70,7 @@ public class GameTest {
     }
 
     @Test
-    public void notRegisterTo() {
+    public void notRegisterTwoPlayer() {
         Game game = new Game();
 
         Player player1 = new Player(1, "Koly", 100);
@@ -78,12 +78,21 @@ public class GameTest {
 
         game.register(player1);
 
-        int expected = 1;
-
         Assertions.assertThrows(RuntimeException.class, () -> {
             game.round("Koly", "Any");
         });
 
+    }
+    @Test
+    public void notRegister() {
+        Game game = new Game();
+
+        Player player1 = new Player(1, "Koly", 100);
+        Player player2 = new Player(2, "Any", 60);
+
+        Assertions.assertThrows(RuntimeException.class, () -> {
+            game.round("Koly", "Any");
+        });
     }
 
 
