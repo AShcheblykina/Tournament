@@ -18,23 +18,23 @@ public class Game {
                 player2 = player;
             }
         }
-            if (player1 == null) {
-                throw new RuntimeException("Players not found");
-            }
-            if (player2 == null) {
-                throw new RuntimeException("Players not found");
-            }
-
-            if (player1.getStrength() > player2.getStrength()) {
-                return 1;
-            }
-            if (player1.getStrength() < player2.getStrength()) {
-                return 2;
-            }
-            return 0;
-
-
+        if (player1 == null) {
+            throw new RuntimeException("Players not found");
         }
+        if (player2 == null) {
+            throw new RuntimeException("Players not found");
+        }
+
+        if (player1.getStrength() > player2.getStrength()) {
+            return 1;
+        }
+        if (player1.getStrength() < player2.getStrength()) {
+            return 2;
+        }
+        return 0;
+
+
+    }
 }
 
 

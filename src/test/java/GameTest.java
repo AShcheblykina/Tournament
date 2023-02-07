@@ -83,6 +83,7 @@ public class GameTest {
         });
 
     }
+
     @Test
     public void notRegister() {
         Game game = new Game();
